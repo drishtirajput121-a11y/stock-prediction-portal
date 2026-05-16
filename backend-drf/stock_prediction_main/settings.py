@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'api',
     "corsheaders",
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -122,5 +123,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 CORS_ALLOWED_ORIGINS =[
-    "http://localhost:5173"
+    " http://localhost:3001"
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}

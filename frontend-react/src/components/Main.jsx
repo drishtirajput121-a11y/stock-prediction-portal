@@ -10,7 +10,7 @@ const Main = () => {
         <div className='p-5 textg center bg-light-dark rounded align-items-center mt-5'>
             <h1 className='text-light'>Stock Prediction Portal</h1>
             <p className='text-light lead'>Predicting the future of stocks with precision</p>
-            <Button text="Register" class = "btn btn-info" />
+            <Button text="Explore Now" class = "btn btn-info" to="/dashboard" />
         </div>
     </div>
     </>

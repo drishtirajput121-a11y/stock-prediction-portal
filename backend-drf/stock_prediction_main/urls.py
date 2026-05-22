@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.http import JsonResponse
+
+def health_check(request):
+    return JsonResponse({"status": "ok", "message": "Market Vision API is running."})
 
 urlpatterns = [
+    path('', health_check, name='health_check'),
     path('admin/', admin.site.urls),
     #BASE API URLS
     path('api/v1/', include('api.urls')),

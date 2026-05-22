@@ -1,14 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --primary-red: #E63946;
+    --primary-red-hover: #D62828;
+    --dark-bg: #0B090A;
+    --darker-bg: #050404;
+    --glass-bg: rgba(22, 11, 13, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-main: #F1FAEE;
+    --text-muted: #A8DADC;
+    --glow-red: 0 0 20px rgba(230, 57, 70, 0.4);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 body {
-    background-color: #434445;
+    background-color: var(--dark-bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    position: relative;
+    margin: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
-.bg-light-dark{
-    background-color: #5a5c5c;
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/public/background.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.10;
+    z-index: -1;
+    pointer-events: none;
 }
+
+/* Glassmorphism Utility */
+.header-glass {
+    background: rgba(8, 8, 8, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid rgba(255, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    padding: 10px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 110px;
+    /* FIXED SMALL HEIGHT */
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(230, 57, 70, 0.15);
+}
+
+.bg-light-dark {
+    /* Legacy class for backwards compatibility, converting to glass */
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+
+/* Custom Red Buttons replacing Bootstrap primary */
+.btn-primary,
+.btn-info {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-hover)) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover,
+.btn-info:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-red);
+    background: linear-gradient(135deg, #FF4D5A, var(--primary-red)) !important;
+}
+
+.btn-outline-info {
+    background: transparent !important;
+    border: 2px solid var(--primary-red) !important;
+    color: var(--primary-red) !important;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease !important;
+}
+
+.btn-outline-info:hover {
+    background: var(--primary-red) !important;
+    color: white !important;
+    box-shadow: var(--glow-red);
+}
+
+.btn-danger {
+    background: #780000 !important;
+    border: none !important;
+}
+
+/* Forms */
+.form-control {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-main) !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--primary-red) !important;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.2) !important;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
 #root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-.container{
+
+.container,
+.dashboard-container {
     flex: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

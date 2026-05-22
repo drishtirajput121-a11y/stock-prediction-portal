@@ -1,0 +1,328 @@
+/* =========================
+   DASHBOARD CONTAINER
+========================= */
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.dashboard-header h2 {
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 12px;
+
+    background: linear-gradient(135deg, #ff4d5a, #d62828);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 30px rgba(255, 0, 0, 0.25);
+}
+
+.dashboard-header p {
+    color: #b8b8b8;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   PREDICTION FORM
+========================= */
+
+.prediction-form {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 35px;
+
+    background: rgba(15, 15, 15, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(255, 0, 0, 0.06);
+}
+
+/* makes all inputs stretch equally */
+.prediction-form>* {
+    flex: 1;
+}
+
+.ticker-input,
+.date-input {
+    height: 58px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: white;
+
+    padding: 0 18px;
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+.ticker-input:focus,
+.date-input:focus {
+    outline: none;
+
+    border-color: #ff4d5a;
+
+    box-shadow:
+        0 0 15px rgba(255, 0, 0, 0.2);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.predict-btn {
+    flex: 0.7;
+
+    height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #ff4d5a, #d62828);
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 4px 18px rgba(255, 0, 0, 0.3);
+}
+
+.predict-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(255, 0, 0, 0.45);
+}
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 4fr 1.1fr;
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+/* =========================
+   MAIN RESULT CARD
+========================= */
+
+.results-container {
+    width: 100%;
+
+    background: rgba(15, 15, 15, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   RESULTS SUMMARY
+========================= */
+
+.results-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.results-summary h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+
+.current-price {
+    color: #c5c5c5;
+    font-size: 1.2rem;
+}
+
+.current-price strong {
+    color: #22c55e;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+/* =========================
+   CHART
+========================= */
+
+.chart-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* =========================
+   SIDE CARDS
+========================= */
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.side-card {
+    background: rgba(15, 15, 15, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error-message {
+    background: rgba(255, 0, 0, 0.08);
+
+    border: 1px solid rgba(255, 0, 0, 0.2);
+
+    color: #ff4d5a;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+/* =========================
+   BACKGROUND OVERLAY
+========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(255, 0, 0, 0.08),
+            transparent 70%);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prediction-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .prediction-form>* {
+        flex: none;
+    }
+
+    .ticker-input {
+        width: 100%;
+        height: 52px;
+    }
+
+    .predict-btn {
+        width: 100%;
+        flex: none;
+        height: 52px;
+        min-height: 52px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .dashboard-container {
+        padding: 20px 14px;
+    }
+
+    .results-container {
+        padding: 18px;
+    }
+
+    .results-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 2rem;
+    }
+}

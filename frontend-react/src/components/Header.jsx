@@ -60,7 +60,7 @@ const Header = () => {
             to="/"
           >
             <img
-              src="public/textlogo.png"
+              src="/textlogo.png"
               alt="Logo"
               className="header-logo-img"
             />

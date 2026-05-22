@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 </p>
-
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://stock-prediction-portal-mnhl.onrender.com/)
 # Market Vision - AI Stock Intelligence Portal
 
 Market Vision is a professional web-based financial analytics platform designed to provide automated historical stock analysis, predictive stock price forecasting, and automated investment signal metrics. The system features a responsive React frontend styled with modern Bootstrap components and glassmorphism elements, paired with a Django REST Framework backend orchestrating mathematical analysis and external financial data pipelines.

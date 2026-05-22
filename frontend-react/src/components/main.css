@@ -111,6 +111,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: -40px;
 }
 
 .hero-logo img {
@@ -180,8 +181,15 @@
 }
 
 @keyframes cursorBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 /* =========================
@@ -226,6 +234,21 @@
     max-width: 650px;
 
     margin-bottom: 38px;
+}
+
+.word-fade {
+    display: inline-block;
+    margin-right: 0.28em;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeWordUp 0.9s cubic-bezier(0.4, 0.8, 0.4, 1) forwards;
+}
+
+@keyframes fadeWordUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* =========================
@@ -411,6 +434,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .hero-logo {
+        margin-top: 0px;
     }
 
     .hero-features {

@@ -20,7 +20,7 @@ const Dashboard = () => {
     useEffect(() => {
         const heading = headingRef.current;
         const subtext = subtextRef.current;
-        const text = 'MARKET VISION DASHBOARD';
+        const text = 'Dashboard';
         let i = 0;
         let timeout;
 

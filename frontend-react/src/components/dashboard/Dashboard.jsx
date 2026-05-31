@@ -20,7 +20,7 @@ const Dashboard = () => {
     useEffect(() => {
         const heading = headingRef.current;
         const subtext = subtextRef.current;
-        const text = 'Dashboard';
+        const text = 'DASHBOARD';
         let i = 0;
         let timeout;
 
